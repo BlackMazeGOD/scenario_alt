@@ -1,0 +1,15 @@
+init 1 python:
+    if persistent.endings_7dl is None:
+        persistent.endings_7dl = {'Лена': {'Классик': [], '7ДЛ': [], 'ФЗ': []}, 'Алиса': {'Классик': [], '7ДЛ': [], 'Диджей': []}, 
+                                  'Славя': {'Классик': [], '7ДЛ': [], 'Ведьма': []}, 'Ольга': [], 'Мику': {'Классик': [], '7ДЛ': [], 'Диджей': []}
+                                  'Д3': {'Ульяна': [], 'Ольга': [], 'Сыч': []}
+                                  
+    endings_7dl = persistent.endings_7dl
+        
+    def add_ending_7dl(id, route='', ending):
+        if route != '':
+            persistent.endings_7dl[id][route].append(ending)
+            return persistent.endings_7dl
+        else:
+            persistent.endings_7dl[id].append(ending)
+            return persistent.endings_7dl
